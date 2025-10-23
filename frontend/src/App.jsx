@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 // API configuration 
-const API_URL = import.meta.env.VITE_API_URL || 'https://d82dfd6e5478.ngrok-free.app';
+const API_URL = import.meta.env.VITE_API_URL || 'https://f2029b831d0e.ngrok-free.app';
 
 function App() {
   const [messages, setMessages] = useState([]);
