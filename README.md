@@ -1,5 +1,5 @@
 
-# 🦊 FileFox - AI Docs Chatbot
+# 🦊 FileFox (chatbot)
 
 **FileFox** is a full-stack AI chatbot that answers questions based on uploaded documents (**PDF, DOCX, CSV**) using a **local LLM** with no API costs.
 
@@ -32,11 +32,11 @@ Before you start, install:
 
 After installing Ollama, pull the model:
 ```bash
-ollama pull phi3:latest (ollama models recommended for computer with less storage runs smoothly on macbook M1,M2 and windows)
+ollama pull phi3:latest (ollama model recommended for computer with less storage runs smoothly on macbook M1,M2 and windows)
 
 You’ll also need:
 	•	Qdrant Cloud (Free)
-	•	DigitalOcean Spaces ($5/month) (optional for file storage , you can decide to entirely run it with you local machine storage)
+	•	DigitalOcean Spaces ($5/month) (optional for file storage , you can decide to entirely run it with your local machine storage)
 
 
 📁 Project Structure
@@ -50,16 +50,16 @@ filefox/
 │   ├── s3_utils.py            # DigitalOcean Spaces upload
 │   ├── llm_client.py          # Ollama integration
 │   ├── requirements.txt       # Python dependencies
-│   └── .env                   # Your secret keys (PLs DON'T COMMIT!)
+│   └── .env                   # Your secret keys (don't commit , it should be on your .gitignore)
 │
 └── frontend/
     ├── src/
     │   ├── App.jsx            # Main React component
     │   ├── App.css            # Styling
     │   ├── main.jsx           # React entry point
-    │   └── index.css          # Global styles
+    │   └── index.css          # styles
     ├── package.json
-    └── .env                   # Frontend config (DON'T COMMIT!)
+    └── .env                   # Frontend config (vite_api-url, it can either by default localhost or ngrok please don't commit)
 	
 
 	  How It Works
