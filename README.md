@@ -32,7 +32,7 @@ Before you start, install:
 
 After installing Ollama, pull the model:
 ```bash
-ollama pull phi3:latest, or Llama 3.2:3b (main 2 ollama models recommended for computer with less storage runs smoothly on macbook M1,M2 and windows)
+ollama pull phi3:latest (ollama models recommended for computer with less storage runs smoothly on macbook M1,M2 and windows)
 
 You’ll also need:
 	•	Qdrant Cloud (Free)

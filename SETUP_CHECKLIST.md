@@ -8,7 +8,7 @@ Use this checklist to make sure you've completed all setup steps correctly.
 - [ ] Python 3.10+ installed (`python --version`)
 - [ ] Node.js 18+ installed (`node --version`)
 - [ ] Git installed (`git --version`)
-- [ ] Text editor installed (VS Code, Sublime, etc.)
+- [ ] Text editor installed (VS Code)
 
 ## Account Setup Checklist
 
@@ -29,8 +29,8 @@ Use this checklist to make sure you've completed all setup steps correctly.
 ### Ollama
 - [ ] Ollama downloaded from https://ollama.com/download
 - [ ] Ollama installed
-- [ ] Model pulled: `ollama pull llama3.2:3b` or `pull phi3:latest`
-- [ ] Ollama tested: `ollama list` shows llama3.2:3b or phi3:latest
+- [ ] Model pulled: `ollama pull phi3:latest`
+- [ ] Ollama tested: `ollama list` shows phi3:latest
 
 ## Backend Setup Checklist
 
