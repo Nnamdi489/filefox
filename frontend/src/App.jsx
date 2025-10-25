@@ -142,21 +142,37 @@ function App() {
   };
 
   const handleClearDatabase = async () => {
-    if (isClearing) return;
-    setIsClearing(true);
-    setMessages(prev => [...prev, { role: 'system', content: 'Clearing all documents...' }]);
-    try {
-      const response = await fetch(`${API_URL}/clear`, { method: 'POST' });
-      if (!response.ok) throw new Error('Failed to clear database');
-      setMessages(prev => [...prev, { role: 'system', content: '✅ All documents cleared successfully.' }]);
-    } catch (error) {
-      console.error('Clear error:', error);
-      setMessages(prev => [...prev, { role: 'system', content: `❌ Failed to clear documents: ${error.message}` }]);
-    } finally {
-      setIsClearing(false);
-    }
-  };
+  if (!window.confirm('Clear all uploaded documents? This cannot be undone.')) {
+    return;
+  }
 
+  setIsClearing(true);
+  
+  try {
+    const response = await fetch(`${API_URL}/clear`, {
+      method: 'DELETE', 
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to clear database');
+    }
+
+    // Clear messages and show success
+    setMessages([{
+      role: 'system',
+      content: '✓ All documents cleared successfully. You can now upload new documents.'
+    }]);
+    
+  } catch (error) {
+    console.error('Clear error:', error);
+    setMessages(prev => [...prev, {
+      role: 'system',
+      content: `✗ Failed to clear database: ${error.message}`
+    }]);
+  } finally {
+    setIsClearing(false);
+  }
+};
   return (
     <div className="app">
       {/* Header */}
