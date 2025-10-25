@@ -1,7 +1,7 @@
 
-# 🦊 FileFox (chatbot)
+# 🦊 FileFox (web chatbot with document analysis and cms integration)
 
-**FileFox** is a full-stack AI chatbot that answers questions based on uploaded documents (**PDF, DOCX, CSV**) using a **local LLM** with no API costs.
+**FileFox** is a full stack AI chatbot that answers questions based on uploaded documents/files (**PDF, DOCX, CSV**) and CMS content using a vector db and local llm (phi3).
 
 ---
 
@@ -11,7 +11,8 @@
 - Local AI via **Ollama (phi3:latest)**  
 - Smart search with **Qdrant vector DB**  
 - Cloud file storage on **DigitalOcean Spaces**  
-- Modern UI design  
+- Modern and responsive design (works on desktop and mobile).
+
 
 ---
 
@@ -88,12 +89,12 @@ CSV: Good for structured data, FAQs, etc.
 Performance:
 First query after upload may be slower (model loading)
 Larger files take longer to process
-Llama phi3:lastest or 3.2:3b is fast but limited - for better quality, use larger models
+Llama phi3:lastest is fast but limited - for better quality, use larger models (preferable on a server with atleast 1Tb storage)
 
 Cost Management:
 Qdrant free tier: 1GB storage
 DO Spaces: $5/month for 250GB
-Ollama: 100% free (runs locally)
+Ollama: free (runs locally)
 Total monthly cost: ~$5
 
 **Need Help?** Refer to SETUP_CHECKLIST.md for detailed checklist guide!
