@@ -141,6 +141,22 @@ function App() {
     }
   };
 
+  const handleClearDatabase = async () => {
+    if (isClearing) return;
+    setIsClearing(true);
+    setMessages(prev => [...prev, { role: 'system', content: 'Clearing all documents...' }]);
+    try {
+      const response = await fetch(`${API_URL}/clear`, { method: 'POST' });
+      if (!response.ok) throw new Error('Failed to clear database');
+      setMessages(prev => [...prev, { role: 'system', content: '✅ All documents cleared successfully.' }]);
+    } catch (error) {
+      console.error('Clear error:', error);
+      setMessages(prev => [...prev, { role: 'system', content: `❌ Failed to clear documents: ${error.message}` }]);
+    } finally {
+      setIsClearing(false);
+    }
+  };
+
   return (
     <div className="app">
       {/* Header */}
@@ -149,6 +165,14 @@ function App() {
           <span className="logo-icon">🦊</span>
           <span className="logo-text">FileFox</span>
         </div>
+        <button 
+          className="clear-button"
+          onClick={handleClearDatabase}
+          disabled={isClearing}
+          title="Clear all documents"
+        >
+          {isClearing ? '⏳' : '🗑️'} Clear All
+        </button>
       </header>
 
       {/* Chat Container */}
