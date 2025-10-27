@@ -1,6 +1,8 @@
 
 # 🦊 FileFox (web chatbot with document analysis and cms integration)
 
+**Live Demo:** https://filefox-weld.vercel.app (Try FileFox live!)
+
 **FileFox** is a full stack AI chatbot that answers questions based on uploaded documents/files (**PDF, DOCX, CSV**) and CMS content using a vector db and local llm (phi3).
 
 ---
@@ -96,5 +98,12 @@ Qdrant free tier: 1GB storage
 DO Spaces: $5/month for 250GB
 Ollama: free (runs locally)
 Total monthly cost: ~$5
+
+🗑️ Using the Clear All Button
+
+The Clear All button in FileFox ensures you start fresh by removing all uploaded documents and embeddings from the Qdrant database. Use it when switching between unrelated topics or when old files cause mixed or irrelevant answers. After clearing, you can safely upload new documents and get responses only from them.
+
+Use when: switching topics, starting a new project, or fixing irrelevant results.
+
 
 **Need Help?** Refer to SETUP_CHECKLIST.md for detailed checklist guide!
